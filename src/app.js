@@ -1,4 +1,4 @@
-import { resultHandler } from './result.js'
+import * as result from './result.js'
 
 const displayElement = document.getElementById('input-output');
 
@@ -13,8 +13,5 @@ function onClickHandler(e) {
     displayElement.textContent += number;
 }
 
-const resultBtn = document.getElementsByClassName('equal')[0];
-resultBtn.addEventListener('click', () => {
-    const data = displayElement.textContent;
-    resultBtn.addEventListener('click', resultHandler(data));
-});
+const clearBtn = document.querySelector('.clear');
+clearBtn.addEventListener('click', ()=> {displayElement.textContent = '0'});

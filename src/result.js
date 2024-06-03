@@ -1,5 +1,12 @@
+const displayElement = document.getElementById('input-output');
+
+const resultBtn = document.getElementsByClassName('equal')[0];
+resultBtn.addEventListener('click', () => {
+    const data = displayElement.textContent;
+    resultBtn.addEventListener('click', resultHandler(data));
+});
+
 export const resultHandler = (data) => {
-    const displayElement = document.getElementById('input-output');
     const leftNumber = +data.split(/[+*\/-]/)[0];
     const rightNumber = +data.split(/[+*\/-]/)[1];
     const operator = data.match(/[+*\/-]/)[0];
