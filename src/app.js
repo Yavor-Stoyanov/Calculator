@@ -1,4 +1,6 @@
-import * as result from './result.js'
+import * as result from './result.js';
+import * as clear from './clear.js';
+import * as del from './delete.js';
 
 const displayElement = document.getElementById('input-output');
 
@@ -12,6 +14,3 @@ function onClickHandler(e) {
     let number = e.target.textContent;
     displayElement.textContent += number;
 }
-
-const clearBtn = document.querySelector('.clear');
-clearBtn.addEventListener('click', ()=> {displayElement.textContent = '0'});
