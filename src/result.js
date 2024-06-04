@@ -6,7 +6,7 @@ resultBtn.addEventListener('click', () => {
     resultBtn.addEventListener('click', resultHandler(data));
 });
 
-export const resultHandler = (data) => {
+const resultHandler = (data) => {
     const leftNumber = +data.split(/[+*\/-]/)[0];
     const rightNumber = +data.split(/[+*\/-]/)[1];
     const operator = data.match(/[+*\/-]/)[0];

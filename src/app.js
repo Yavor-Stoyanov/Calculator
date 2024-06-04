@@ -11,15 +11,12 @@ numbersBtn.forEach(btn => {
 
 function onClickHandler(e) {
     const button = e.target.textContent;
-    if (!button.match(/[+\/*-]/) && displayElement.textContent == '0') {
+    if (!button.match(/[+\/*-\.]/) && displayElement.textContent == '0') {
         displayElement.textContent = displayElement.textContent.replace(/^0+/, '');
     }
 
-    if (button == '.') {
-        displayElement.textContent += '0';
-    }
-
     displayElement.textContent += button;
+    displayElement.textContent = displayElement.textContent.replace(/(?<=[+\-\*\/])\./, '0.');
     displayElement.textContent = displayElement.textContent.replaceAll(/(?<=[\+\/\*\-])0+/g, '0');
     displayElement.textContent = displayElement.textContent.replaceAll(/(?<=[\+\/\*\-])0+(?=[1-9])/g, '');
 }
