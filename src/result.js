@@ -3,31 +3,46 @@ const resultBtn = document.querySelector('.equal');
 
 const resultHandler = (data) => {
     const parts = data.split(/([+*\/-])/);
-    if (parts.length < 3 || parts[2] == '') {
+    parts.forEach(el => { if (el == '') { parts.pop() } });
+
+    if (parts.length < 3) {
         displayElement.textContent = '0';
         return;
     }
 
-    const leftNumber = +parts[0];
-    const operator = parts[1];
-    const rightNumber = +parts[2];
-
+    let digitOne;
+    let operator;
     let result;
 
-    switch (operator) {
-        case '+':
-            result = leftNumber + rightNumber;
-            break;
-        case '-':
-            result = leftNumber - rightNumber;
-            break;
-        case '*':
-            result = leftNumber * rightNumber;
-            break;
-        case '/':
-            result = leftNumber / rightNumber;
-            break;
-    }
+    parts.forEach((el, i) => {
+        if (i == 0) {
+            digitOne = +el;
+            return;
+        }
+
+        if (isNaN(el)) {
+            operator = el;
+        } else {
+            switch (operator) {
+                case '+':
+                    result = digitOne + +el;
+                    break;
+                case '-':
+                    result = digitOne - +el;
+                    break;
+                case '*':
+                    result = digitOne * +el;
+                    break;
+                case '/':
+                    result = digitOne / +el;
+                    break;
+                default:
+                    displayElement.textContent = 'Error';
+                    break;
+            }
+            digitOne = result;
+        }
+    });
 
     displayElement.textContent = result;
 };
