@@ -3,7 +3,7 @@ const resultBtn = document.querySelector('.equal');
 
 const resultHandler = (data) => {
     const parts = data.split(/([+*\/-])/);
-    parts.forEach(el => { if (el == '') { parts.pop() } });
+    parts.forEach((el, i) => { if (el == '') { parts.splice(i, 1) } });
 
     if (parts.length < 3) {
         displayElement.textContent = '0';

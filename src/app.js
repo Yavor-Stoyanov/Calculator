@@ -20,5 +20,3 @@ function onClickHandler(e) {
     displayElement.textContent = displayElement.textContent.replaceAll(/(?<=[\+\/\*\-])0+/g, '0');
     displayElement.textContent = displayElement.textContent.replaceAll(/(?<=[\+\/\*\-])0+(?=[1-9])/g, '');
 }
-
-// think about negative calculations
