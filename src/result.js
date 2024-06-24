@@ -1,4 +1,5 @@
-const displayElement = document.getElementById('input-output');
+const resultDisplay = document.getElementById('input-output');
+const subsidiaryDisplay = document.getElementById('display-result');
 const resultBtn = document.querySelector('.equal');
 
 const resultHandler = (data) => {
@@ -6,7 +7,7 @@ const resultHandler = (data) => {
     parts.forEach((el, i) => { if (el == '') { parts.splice(i, 1) } });
 
     if (parts.length < 3) {
-        displayElement.textContent = '0';
+        resultDisplay.textContent = '0';
         return;
     }
 
@@ -37,17 +38,18 @@ const resultHandler = (data) => {
                     result = digitOne / +el;
                     break;
                 default:
-                    displayElement.textContent = 'Error';
+                    resultDisplay.textContent = 'Error';
                     break;
             }
             digitOne = result;
         }
     });
 
-    displayElement.textContent = result;
+    subsidiaryDisplay.textContent += resultDisplay.textContent + '=';
+    resultDisplay.textContent = result;
 };
 
 resultBtn.addEventListener('click', () => {
-    const data = displayElement.textContent;
+    const data = subsidiaryDisplay.textContent + resultDisplay.textContent;
     resultHandler(data);
 });

@@ -1,3 +1,3 @@
 const clearBtn = document.querySelector('.clear');
 const displayElement = document.getElementById('input-output');
-clearBtn.addEventListener('click', () => { displayElement.textContent = '0' });
+clearBtn.addEventListener('click', () => { resultDisplay.textContent = '0' });
