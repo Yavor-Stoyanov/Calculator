@@ -18,14 +18,26 @@ body {
     margin-bottom: 30px;
 }
 
-.calc-display p {
+#input-output {
     width: 100%;
     font-size: 3.5rem;
     text-align: end;
     background-color: rgb(236, 215, 215);
     color: rgb(0, 0, 0);
     border: none;
-    border-radius: 0.1em;
+    border-radius: 0 0 0.1em 0.1em;
+    outline: none;
+    word-break: break-all;
+}
+
+#display-result {
+    width: 100%;
+    font-size: 2.5rem;
+    text-align: end;
+    background-color: rgb(236, 215, 215);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 0.1em 0.1em 0 0;
     outline: none;
     word-break: break-all;
 }

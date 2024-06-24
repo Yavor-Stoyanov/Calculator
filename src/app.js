@@ -1,6 +1,7 @@
 import * as result from './result.js';
 import * as clear from './clear.js';
 import * as del from './delete.js';
+import { signChange } from './signChange.js'
 
 const displayElement = document.getElementById('input-output');
 
