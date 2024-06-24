@@ -1,7 +1,3 @@
-const resultDisplay = document.getElementById('resultDisplay');
-const subsidiaryDisplay = document.getElementById('subsidiaryDisplay');
-const resultBtn = document.querySelector('.equal');
-
 const resultHandler = (data) => {
     const parts = data.split(/([+*\/-])/);
     parts.forEach((el, i) => { if (el == '') { parts.splice(i, 1) } });

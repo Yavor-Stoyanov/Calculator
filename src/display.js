@@ -1,6 +1,3 @@
-const resultDisplay = document.getElementById('resultDisplay');
-const subsidiaryDisplay = document.getElementById('subsidiaryDisplay');
-
 //let btnContext = 'numbers';
 
 export function numbersHandler(e) {
