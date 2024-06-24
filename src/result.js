@@ -1,5 +1,5 @@
-const resultDisplay = document.getElementById('input-output');
-const subsidiaryDisplay = document.getElementById('display-result');
+const resultDisplay = document.getElementById('resultDisplay');
+const subsidiaryDisplay = document.getElementById('subsidiaryDisplay');
 const resultBtn = document.querySelector('.equal');
 
 const resultHandler = (data) => {

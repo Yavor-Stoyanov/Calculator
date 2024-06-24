@@ -1,26 +1,26 @@
-const resultDisplay = document.getElementById('display-result');
-const inputOutputDisplay = document.getElementById('input-output');
+const resultDisplay = document.getElementById('resultDisplay');
+const subsidiaryDisplay = document.getElementById('subsidiaryDisplay');
 
-let btnContext = 'numbers';
+//let btnContext = 'numbers';
 
 export function numbersHandler(e) {
     const button = e.target.textContent;
-    if (!button.match(/[+\/*-\.]/) && inputOutputDisplay.textContent == '0') {
-        inputOutputDisplay.textContent = inputOutputDisplay.textContent.replace(/^0+/, '');
+    if (!button.match(/[+\/*-\.]/) && resultDisplay.textContent == '0') {
+        resultDisplay.textContent = resultDisplay.textContent.replace(/^0+/, '');
     }
     
-    inputOutputDisplay.textContent += button;
-    inputOutputDisplay.textContent = inputOutputDisplay.textContent.replace(/(?<=[+\-\*\/])\./, '0.');
-    inputOutputDisplay.textContent = inputOutputDisplay.textContent.replaceAll(/(?<=[\+\/\*\-])0+/g, '0');
-    inputOutputDisplay.textContent = inputOutputDisplay.textContent.replaceAll(/(?<=[\+\/\*\-])0+(?=[1-9])/g, '');
-    btnContext = 'numbers';
+    resultDisplay.textContent += button;
+    resultDisplay.textContent = resultDisplay.textContent.replace(/(?<=[+\-\*\/])\./, '0.');
+    resultDisplay.textContent = resultDisplay.textContent.replaceAll(/(?<=[\+\/\*\-])0+/g, '0');
+    resultDisplay.textContent = resultDisplay.textContent.replaceAll(/(?<=[\+\/\*\-])0+(?=[1-9])/g, '');
+    //btnContext = 'numbers';
 }
 
 export function operationsHandler(e) {
-    if (btnContext == 'operations') {
+    // if (btnContext == 'operations') {
         
-    }
-    resultDisplay.textContent = inputOutputDisplay.textContent + e.currentTarget.textContent;
-    inputOutputDisplay.textContent = '0';
-    btnContext = 'operations';
+    // }
+    subsidiaryDisplay.textContent = resultDisplay.textContent + e.currentTarget.textContent;
+    resultDisplay.textContent = '0';
+    //btnContext = 'operations';
 }
