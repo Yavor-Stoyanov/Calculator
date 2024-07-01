@@ -4,18 +4,12 @@ import * as del from './delete.js';
 import { signChange } from './signChange.js';
 import { numbersHandler, operationsHandler } from './display.js';
 
-let buttonContext = '';
-
 const numbersBtns = document.querySelectorAll('.numbers');
 numbersBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        numbersHandler(e, buttonContext)
-    })
+    btn.addEventListener('click', numbersHandler)
 })
 
 const operationsBtns = document.querySelectorAll('.operations');
 operationsBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        operationsHandler(e, buttonContext);
-    });
+    btn.addEventListener('click', operationsHandler);
 });

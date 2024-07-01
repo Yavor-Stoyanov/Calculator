@@ -1,1 +1,3 @@
 - stop posibility of multiple signes
+- need more work on calculation after result
+- change of signes
