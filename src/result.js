@@ -1,15 +1,23 @@
+let digitOne;
+let operator;
+let digitTwo;
+let result;
+let resultBtnCounter;
+
 const resultHandler = (data) => {
-    const parts = data.split(/([+*\/-])/);
+    
+    if (resultBtnCounter > 0) {
+        parts[0] = result;
+        parts[1] = operator;
+        parts[2] = digitTwo;
+    }
+    const parts = data.split(/([\+\*/-])/);
     parts.forEach((el, i) => { if (el == '') { parts.splice(i, 1) } });
 
     if (parts.length < 3) {
         resultDisplay.textContent = '0';
         return;
     }
-
-    let digitOne;
-    let operator;
-    let result;
 
     parts.forEach((el, i) => {
         if (i == 0) {
@@ -20,29 +28,32 @@ const resultHandler = (data) => {
         if (isNaN(el)) {
             operator = el;
         } else {
+            digitTwo = +el;
+
             switch (operator) {
                 case '+':
-                    result = digitOne + +el;
+                    result = digitOne + digitTwo;
                     break;
                 case '-':
-                    result = digitOne - +el;
+                    result = digitOne - digitTwo;
                     break;
                 case '*':
-                    result = digitOne * +el;
+                    result = digitOne * digitTwo;
                     break;
                 case '/':
-                    result = digitOne / +el;
+                    result = digitOne / digitTwo;
                     break;
                 default:
                     resultDisplay.textContent = 'Error';
                     break;
             }
-            digitOne = result;
         }
     });
 
     subsidiaryDisplay.textContent += resultDisplay.textContent + '=';
     resultDisplay.textContent = result;
+
+    resultBtnCounter++;
 };
 
 resultBtn.addEventListener('click', () => {
