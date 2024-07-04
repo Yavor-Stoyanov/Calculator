@@ -1,3 +1,4 @@
 - change of signes
 - calculation with negative digits
-- what happen after click two times on equal
+- remove possibility of two dots
+- make it work with keyboard
