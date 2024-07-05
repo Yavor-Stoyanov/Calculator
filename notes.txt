@@ -2,3 +2,4 @@
 - calculation with negative digits
 - remove possibility of two dots
 - make it work with keyboard
+- make percentage button work
