@@ -15,8 +15,10 @@ operationsBtns.forEach(btn => {
     btn.addEventListener('click', operationsHandler);
 });
 
-document.addEventListener('keyup', (e) => {
+document.body.addEventListener('keyup', (e) => {
     if (isOperableKey(e)) {
-        console.log(e.key);
+        numbersHandler(e);
+    } else {
+        
     }
 });

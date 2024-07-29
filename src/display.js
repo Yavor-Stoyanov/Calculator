@@ -1,7 +1,12 @@
 let buttonContext;
 
 export function numbersHandler(e) {
-    const button = e.target.textContent;
+    let button;
+    if (e instanceof PointerEvent) {
+        button = e.target.textContent;
+    } else if (e instanceof KeyboardEvent) {
+        button = e.key;
+    }
     
     if (!button.match(/\./) && resultDisplay.textContent == '0') {
         resultDisplay.textContent = resultDisplay.textContent.replace(/^0+/, '');
