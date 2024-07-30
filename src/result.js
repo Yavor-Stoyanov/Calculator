@@ -2,7 +2,7 @@ let digitOne;
 let operator;
 let digitTwo;
 
-const resultHandler = (data) => {
+export const resultHandler = (data) => {
     if (subsidiaryDisplay.textContent.includes('=')) {
         const parts = [];
         parts[0] = resultDisplay.textContent;
@@ -28,9 +28,13 @@ const resultHandler = (data) => {
     };
 };
 
-resultBtn.addEventListener('click', () => {
+resultBtn.addEventListener('click', (e) => {
     const data = subsidiaryDisplay.textContent + resultDisplay.textContent;
     resultHandler(data);
+
+    setTimeout(() => {
+        e.target.blur();
+    }, 50)
 });
 
 const calculateHandler = (parts) => {

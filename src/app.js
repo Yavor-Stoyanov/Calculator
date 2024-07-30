@@ -1,4 +1,4 @@
-import * as result from './result.js';
+import { resultHandler } from './result.js';
 import * as clear from './clear.js';
 import * as del from './delete.js';
 import { signChange } from './signChange.js';
@@ -16,9 +16,12 @@ operationsBtns.forEach(btn => {
 });
 
 document.body.addEventListener('keyup', (e) => {
-    if (isOperableKey(e)) {
+    if (isOperableKey(e) == 'numbers') {
         numbersHandler(e);
-    } else {
-        
+    } else if (isOperableKey(e) == 'operations') {
+        operationsHandler(e);
+    } else if (e.key == 'Enter' || e.key == '=') {
+        const data = subsidiaryDisplay.textContent + resultDisplay.textContent;
+        resultHandler(data);
     }
 });

@@ -22,11 +22,24 @@ export function numbersHandler(e) {
     resultDisplay.textContent = resultDisplay.textContent.replaceAll(/(?<=[\+\/\*\-])0+/g, '0');
     resultDisplay.textContent = resultDisplay.textContent.replaceAll(/(?<=[\+\/\*\-])0+(?=[1-9])/g, '');
     buttonContext = 'number';
+
+    setTimeout(() => {
+        e.target.blur();
+    }, 50)
 }
 
 export function operationsHandler(e) {
-    let sign = e.currentTarget.textContent;
+    let sign;
+    if (e instanceof PointerEvent) {
+        sign = e.currentTarget.textContent;
+    } else if (e instanceof KeyboardEvent) {
+        sign = e.key;
+    }
     let num = resultDisplay.textContent;
     subsidiaryDisplay.textContent = num + sign;
     buttonContext = 'operation';
+
+    setTimeout(() => {
+        e.target.blur();
+    }, 50)
 }

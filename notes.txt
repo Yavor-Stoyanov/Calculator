@@ -1,5 +1,9 @@
-- change of signes
+- change of signes / remove focus on button
 - calculation with negative digits
 - remove possibility of two dots
-- make it work with keyboard
-- make percentage button work
+- make it work with keyboard:
+    delete
+    backspace
+    percentage
+    sign
+- make percentage button work / remove focus on button
