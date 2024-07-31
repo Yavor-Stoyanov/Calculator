@@ -1,6 +1,6 @@
 import { resultHandler } from './result.js';
 import * as clear from './clear.js';
-import * as del from './delete.js';
+import { delDigit } from './delete.js';
 import { signChange } from './signChange.js';
 import { numbersHandler, operationsHandler } from './display.js';
 import { isOperableKey } from './util.js';
@@ -23,5 +23,7 @@ document.body.addEventListener('keyup', (e) => {
     } else if (e.key == 'Enter' || e.key == '=') {
         const data = subsidiaryDisplay.textContent + resultDisplay.textContent;
         resultHandler(data);
-    }
+    } else if (e.key == 'Backspace') {
+        delDigit(e);
+    };
 });
