@@ -1,5 +1,5 @@
 import { resultHandler } from './result.js';
-import * as clear from './clear.js';
+import { clearAll } from './clear.js';
 import { delDigit } from './delete.js';
 import { signChange } from './signChange.js';
 import { numbersHandler, operationsHandler } from './display.js';
@@ -15,7 +15,7 @@ operationsBtns.forEach(btn => {
     btn.addEventListener('click', operationsHandler);
 });
 
-document.body.addEventListener('keyup', (e) => {
+document.body.addEventListener('keydown', (e) => {
     if (isOperableKey(e) == 'numbers') {
         numbersHandler(e);
     } else if (isOperableKey(e) == 'operations') {
@@ -25,5 +25,7 @@ document.body.addEventListener('keyup', (e) => {
         resultHandler(data);
     } else if (e.key == 'Backspace') {
         delDigit(e);
-    };
+    } else if (e.key == 'Delete') {
+        clearAll(e);
+    }
 });
