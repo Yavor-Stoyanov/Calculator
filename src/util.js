@@ -19,3 +19,5 @@ export const isOperableKey = (e) => {
 
     return keys;
 };
+
+export const blurFocus = (e) => setTimeout(() => e.target.blur(), 50);

@@ -1,3 +1,5 @@
+import { blurFocus } from "./util.js";
+
 let digitOne;
 let operator;
 let digitTwo;
@@ -32,9 +34,7 @@ resultBtn.addEventListener('click', (e) => {
     const data = subsidiaryDisplay.textContent + resultDisplay.textContent;
     resultHandler(data);
 
-    setTimeout(() => {
-        e.target.blur();
-    }, 50)
+    blurFocus(e);
 });
 
 const calculateHandler = (parts) => {

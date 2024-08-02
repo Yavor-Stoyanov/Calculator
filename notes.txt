@@ -1,6 +1,5 @@
 - change of signes / remove focus on button
 - calculation with negative digits
-- remove possibility of two dots
 - make it work with keyboard:
     percentage
     sign

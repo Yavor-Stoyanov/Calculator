@@ -1,10 +1,10 @@
+import { blurFocus } from "./util.js";
+
 export const clearAll = (e) => {
     resultDisplay.textContent = '0';
     subsidiaryDisplay.textContent = '0';
 
-    setTimeout(() => {
-        e.target.blur();
-    }, 50)
+    blurFocus(e);
 };
 
 clearBtn.addEventListener('click', clearAll);

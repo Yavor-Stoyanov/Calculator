@@ -1,3 +1,5 @@
+import { blurFocus } from "./util.js";
+
 export const delDigit = (e) => {
     let data = resultDisplay.textContent;
     data = data.slice(0, data.length - 1);
@@ -7,9 +9,7 @@ export const delDigit = (e) => {
         subsidiaryDisplay.textContent = '0';
     }
 
-    setTimeout(() => {
-        e.target.blur();
-    }, 50)
+    blurFocus(e);
 };
 
 delBtn.addEventListener('click', delDigit);

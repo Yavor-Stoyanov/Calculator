@@ -1,3 +1,5 @@
+import { blurFocus } from "./util.js";
+
 let buttonContext;
 
 export function numbersHandler(e) {
@@ -27,9 +29,7 @@ export function numbersHandler(e) {
     resultDisplay.textContent = resultDisplay.textContent.replaceAll(/(?<=[\+\/\*\-])0+(?=[1-9])/g, '');
     buttonContext = 'number';
 
-    setTimeout(() => {
-        e.target.blur();
-    }, 50)
+    blurFocus(e);
 }
 
 export function operationsHandler(e) {
@@ -43,7 +43,5 @@ export function operationsHandler(e) {
     subsidiaryDisplay.textContent = num + sign;
     buttonContext = 'operation';
 
-    setTimeout(() => {
-        e.target.blur();
-    }, 50)
+    blurFocus(e);
 }
