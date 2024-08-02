@@ -7,4 +7,4 @@ export const clearAll = (e) => {
     }, 50)
 };
 
-clearBtn.addEventListener('click', () => clearAll);
+clearBtn.addEventListener('click', clearAll);

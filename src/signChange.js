@@ -1,4 +1,4 @@
-export function signChange(params) {
+export const signChange = () => {
     const display = document.getElementById('input-output');
 
     const expression = display.textContent;
