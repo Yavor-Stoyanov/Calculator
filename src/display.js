@@ -12,6 +12,10 @@ export function numbersHandler(e) {
         resultDisplay.textContent = resultDisplay.textContent.replace(/^0+/, '');
     }
 
+    if (button == '.' && resultDisplay.textContent.includes('.')) {
+        return;
+    }
+
     if (buttonContext == 'operation') {
         resultDisplay.textContent = '';
     }
