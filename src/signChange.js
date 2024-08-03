@@ -1,6 +1,11 @@
-export const signChange = () => {
-    const display = document.getElementById('input-output');
+import { blurFocus } from "./util.js";
 
-    const expression = display.textContent;
-    const data = expression.split(/[+\/*-\.]/)
-}
+export const signChange = (e) => {
+    if (resultDisplay.textContent.includes('-')) {
+        resultDisplay.textContent = resultDisplay.textContent.slice(1);
+    } else {
+        resultDisplay.textContent = '-' + resultDisplay.textContent;
+    }
+
+    blurFocus(e);
+};

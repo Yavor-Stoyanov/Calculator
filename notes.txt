@@ -1,6 +1,6 @@
-- change of signes / remove focus on button
 - calculation with negative digits
 - make it work with keyboard:
     percentage
     sign
 - make percentage button work / remove focus on button
+- there isn't a focus with keyboard

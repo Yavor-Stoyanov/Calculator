@@ -9,7 +9,7 @@ export function numbersHandler(e) {
     } else if (e instanceof KeyboardEvent) {
         button = e.key;
     }
-    
+
     if (!button.match(/\./) && resultDisplay.textContent == '0') {
         resultDisplay.textContent = resultDisplay.textContent.replace(/^0+/, '');
     }
@@ -21,7 +21,7 @@ export function numbersHandler(e) {
     if (buttonContext == 'operation') {
         resultDisplay.textContent = '';
     }
-    
+
     resultDisplay.textContent += button;
 
     resultDisplay.textContent = resultDisplay.textContent.replace(/(?<=[+\-\*\/])\./, '0.');
@@ -34,13 +34,14 @@ export function numbersHandler(e) {
 
 export function operationsHandler(e) {
     let sign;
+
     if (e instanceof PointerEvent) {
         sign = e.currentTarget.textContent;
     } else if (e instanceof KeyboardEvent) {
         sign = e.key;
     }
-    let num = resultDisplay.textContent;
-    subsidiaryDisplay.textContent = num + sign;
+
+    subsidiaryDisplay.textContent = resultDisplay.textContent + sign;
     buttonContext = 'operation';
 
     blurFocus(e);

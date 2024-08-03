@@ -8,12 +8,15 @@ import { isOperableKey } from './util.js';
 const numbersBtns = document.querySelectorAll('.numbers');
 numbersBtns.forEach(btn => {
     btn.addEventListener('click', numbersHandler);
-})
+});
 
 const operationsBtns = document.querySelectorAll('.operations');
 operationsBtns.forEach(btn => {
     btn.addEventListener('click', operationsHandler);
 });
+
+const signChangeBtn = document.querySelector('.sign-change');
+signChangeBtn.addEventListener('click', signChange);
 
 document.body.addEventListener('keydown', (e) => {
     if (isOperableKey(e) == 'numbers') {
