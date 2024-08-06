@@ -8,7 +8,7 @@ export const isOperableKey = (e) => {
 
     const operations = [
         '+', '-', '*', '/',
-        '%', 's'
+        '%',
     ];
 
     if (numbers.includes(key)) {

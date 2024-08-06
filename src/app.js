@@ -30,5 +30,7 @@ document.body.addEventListener('keydown', (e) => {
         delDigit(e);
     } else if (e.key == 'Delete') {
         clearAll(e);
-    }
+    } else if (e.key == 's') {
+        signChange(e);
+    };
 });
