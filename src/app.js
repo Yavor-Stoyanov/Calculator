@@ -4,6 +4,7 @@ import { delDigit } from './delete.js';
 import { signChange } from './signChange.js';
 import { numbersHandler, operationsHandler } from './display.js';
 import { isOperableKey } from './util.js';
+import { percentageHandler } from './percentage.js';
 
 const numbersBtns = document.querySelectorAll('.numbers');
 numbersBtns.forEach(btn => {
@@ -17,6 +18,9 @@ operationsBtns.forEach(btn => {
 
 const signChangeBtn = document.querySelector('.sign-change');
 signChangeBtn.addEventListener('click', signChange);
+
+const percentageBtn = document.getElementById('percentageBtn');
+percentageBtn.addEventListener('click', percentageHandler);
 
 document.body.addEventListener('keydown', (e) => {
     if (isOperableKey(e) == 'numbers') {
