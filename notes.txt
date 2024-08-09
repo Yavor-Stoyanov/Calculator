@@ -1,5 +1,5 @@
 - calculation with negative digits
 - make it work with keyboard:
     percentage
-- make percentage button work / remove focus on button
+- make percentage button work / remove focus on button - https://www.wikihow.com/Do-Percentages-on-a-Calculator
 - there isn't a focus with keyboard

@@ -36,5 +36,7 @@ document.body.addEventListener('keydown', (e) => {
         clearAll(e);
     } else if (e.key == 's') {
         signChange(e);
-    };
+    } else if (e.key == '%') {
+        percentageHandler(e);
+    }
 });
