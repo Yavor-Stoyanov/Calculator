@@ -1,4 +1,5 @@
 import { blurFocus } from "./util.js";
+import Decimal from "../node_modules/decimal.js/decimal.mjs";
 
 let digitOne;
 let operator;
@@ -11,20 +12,20 @@ export const resultHandler = (data) => {
         parts[1] = operator;
         parts[2] = digitTwo;
         const currentExpressionNewResult = calculateHandler(parts);
-        
+
         subsidiaryDisplay.textContent = resultDisplay.textContent + operator + digitTwo + '=';
         resultDisplay.textContent = currentExpressionNewResult;
     } else {
         const parts = data.split(/([\+\*/-])/);
         parts.forEach((el, i) => { if (el == '') { parts.splice(i, 1) } });
-        
+
         if (parts.length < 3) {
             resultDisplay.textContent = '0';
             return;
         }
-        
+
         const newExpressionResult = calculateHandler(parts);
-        
+
         subsidiaryDisplay.textContent += resultDisplay.textContent + '=';
         resultDisplay.textContent = newExpressionResult;
     };
@@ -42,27 +43,27 @@ const calculateHandler = (parts) => {
 
     parts.forEach((el, i) => {
         if (i == 0) {
-            digitOne = +el;
+            digitOne = new Decimal(el);
             return;
         }
-        
+
         if (isNaN(el)) {
             operator = el;
         } else {
-            digitTwo = +el;
-            
+            digitTwo = new Decimal(el);
+
             switch (operator) {
                 case '+':
-                    result = digitOne + digitTwo;
+                    result = digitOne.plus(digitTwo);
                     break;
                 case '-':
-                    result = digitOne - digitTwo;
+                    result = digitOne.minus(digitTwo);
                     break;
-                    case '*':
-                    result = digitOne * digitTwo;
+                case '*':
+                    result = digitOne.times(digitTwo);
                     break;
                 case '/':
-                    result = digitOne / digitTwo;
+                    result = digitOne.dividedBy(digitTwo);
                     break;
                 default:
                     result = 'Error';

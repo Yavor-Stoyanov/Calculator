@@ -2,4 +2,3 @@
 - make percentage button work / remove focus on button
 - there isn't a focus with keyboard
 - thin whether to clean result display before enter second digit (direct push of dot on second digit)
-- 0.1 + 0.2 problem
