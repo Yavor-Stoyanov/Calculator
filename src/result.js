@@ -5,14 +5,19 @@ let digitOne;
 let operator;
 let digitTwo;
 
+let isSecondDigitNegative;
+const regex = /[+\-*/]{2}/;
+
 export const resultHandler = (data) => {
+    let expression = subsidiaryDisplay.textContent + resultDisplay.textContent;
+    isSecondDigitNegative = regex.test(expression)
+    
     if (subsidiaryDisplay.textContent.includes('=')) {
         const parts = [];
         parts[0] = resultDisplay.textContent;
         parts[1] = operator;
         parts[2] = digitTwo;
         const currentExpressionNewResult = calculateHandler(parts);
-
         subsidiaryDisplay.textContent = resultDisplay.textContent + operator + digitTwo + '=';
         resultDisplay.textContent = currentExpressionNewResult;
     } else {
@@ -40,16 +45,23 @@ resultBtn.addEventListener('click', (e) => {
 
 const calculateHandler = (parts) => {
     let result;
-
+    
     parts.forEach((el, i) => {
         if (i == 0) {
+            if (el == '-') {
+                el = '-' + parts[1]
+            }
             digitOne = new Decimal(el);
+            
             return;
         }
 
         if (isNaN(el)) {
             operator = el;
         } else {
+            if (isSecondDigitNegative) {
+                el = '-' + parts[parts.length - 1];
+            }
             digitTwo = new Decimal(el);
 
             switch (operator) {

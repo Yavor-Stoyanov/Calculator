@@ -1,4 +1,4 @@
-- calculation with negative digits
+- calculation with negative digits (take correct sign)
 - make percentage button work / remove focus on button
 - there isn't a focus with keyboard
 - thin whether to clean result display before enter second digit (direct push of dot on second digit)
