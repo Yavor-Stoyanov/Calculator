@@ -1,4 +1,0 @@
-- make percentage button work / remove focus on button
-- there isn't a focus with keyboard
-- think whether to clean result display before enter second digit (direct push of dot on second digit)
-- scale of screen
