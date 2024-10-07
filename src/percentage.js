@@ -1,4 +1,3 @@
-import { resultHandler } from "./result.js";
 import { blurFocus } from "./util.js";
 
 export const percentageHandler = (e) => {
